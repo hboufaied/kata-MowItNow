@@ -2,6 +2,7 @@ package io.github.hboufaied.kata.entity;
 
 import io.github.hboufaied.kata.rule.Command;
 import io.github.hboufaied.kata.rule.Direction;
+import io.github.hboufaied.kata.rule.Position;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
@@ -15,7 +16,7 @@ public class MowerTest {
     private Garden garden = new Garden(5, 5);
 
     @Test
-    public void shouldRotateToEastWhenMowerInNorthAndCommandIsRight() {
+    void shouldRotateToEastWhenMowerInNorthAndCommandIsRight() {
         Mower mower = Mower.builder()
                 .position(new Position(2,2, Direction.North))
                 .commands(Collections.singletonList(Command.RIGHT))
@@ -29,7 +30,7 @@ public class MowerTest {
     }
 
     @Test
-    public void shouldRotateToWestWhenMowerInSouthAndCommandIsRight() {
+    void shouldRotateToWestWhenMowerInSouthAndCommandIsRight() {
         Mower mower = Mower.builder()
                 .position(new Position(2,2, Direction.South))
                 .commands(Collections.singletonList(Command.RIGHT))
@@ -43,7 +44,7 @@ public class MowerTest {
     }
 
     @Test
-    public void shouldRotateToSouthWhenMowerInEastAndCommandIsRight() {
+    void shouldRotateToSouthWhenMowerInEastAndCommandIsRight() {
         Mower mower = Mower.builder()
                 .position(new Position(2,2, Direction.East))
                 .commands(Collections.singletonList(Command.RIGHT))
@@ -57,7 +58,7 @@ public class MowerTest {
     }
 
     @Test
-    public void shouldRotateToNorthWhenMowerInWestAndCommandIsRight() {
+    void shouldRotateToNorthWhenMowerInWestAndCommandIsRight() {
         Mower mower = Mower.builder()
                 .position(new Position(2,2, Direction.West))
                 .commands(Collections.singletonList(Command.RIGHT))
@@ -71,7 +72,7 @@ public class MowerTest {
     }
 
     @Test
-    public void shouldRotateToWestWhenMowerInNorthAndCommandIsLeft() {
+    void shouldRotateToWestWhenMowerInNorthAndCommandIsLeft() {
         Mower mower = Mower.builder()
                 .position(new Position(2,2, Direction.North))
                 .commands(Collections.singletonList(Command.LEFT))
@@ -85,7 +86,7 @@ public class MowerTest {
     }
 
     @Test
-    public void shouldRotateToNorthWhenMowerInEastAndCommandIsLeft() {
+    void shouldRotateToNorthWhenMowerInEastAndCommandIsLeft() {
         Mower mower = Mower.builder().
                 position(new Position(2,2, Direction.East))
                 .commands(Collections.singletonList(Command.LEFT))
@@ -99,7 +100,7 @@ public class MowerTest {
     }
 
     @Test
-    public void shouldRotateToEastWhenMowerInSouthAndCommandIsLeft() {
+    void shouldRotateToEastWhenMowerInSouthAndCommandIsLeft() {
         Mower mower = Mower.builder()
                 .position(new Position(2,2, Direction.South))
                 .commands(Collections.singletonList(Command.LEFT))
@@ -113,7 +114,7 @@ public class MowerTest {
     }
 
     @Test
-    public void shouldRotateToSouthWhenMowerInWestAndCommandIsLeft() {
+    void shouldRotateToSouthWhenMowerInWestAndCommandIsLeft() {
         Mower mower = Mower.builder()
                 .position(new Position(2,2, Direction.West))
                 .commands(Collections.singletonList(Command.LEFT))
@@ -127,7 +128,7 @@ public class MowerTest {
     }
 
     @Test
-    public void shouldMoveToNextYPositionWhenCommandIsAdvanceAndDirectionIsNorth() {
+    void shouldMoveToNextYPositionWhenCommandIsAdvanceAndDirectionIsNorth() {
         Mower mower = Mower.builder()
                 .position(new Position(2,2, Direction.North))
                 .commands(Collections.singletonList(Command.ADVANCE))
@@ -141,7 +142,7 @@ public class MowerTest {
     }
 
     @Test
-    public void shouldMoveToNextXPositionWhenCommandIsAdvanceAndDirectionIsEast() {
+    void shouldMoveToNextXPositionWhenCommandIsAdvanceAndDirectionIsEast() {
         Mower mower = Mower.builder()
                 .position(new Position(2,2, Direction.East))
                 .commands(Collections.singletonList(Command.ADVANCE))
@@ -155,7 +156,7 @@ public class MowerTest {
     }
 
     @Test
-    public void shouldMoveToBackYPositionWhenCommandIsAdvanceAndDirectionIsSouth() {
+    void shouldMoveToBackYPositionWhenCommandIsAdvanceAndDirectionIsSouth() {
         Mower mower = Mower.builder()
                 .position(new Position(2,2, Direction.South))
                 .commands(Collections.singletonList(Command.ADVANCE))
@@ -169,7 +170,7 @@ public class MowerTest {
     }
 
     @Test
-    public void shouldMoveToBackXPositionWhenCommandIsAdvanceAndDirectionIsWest() {
+    void shouldMoveToBackXPositionWhenCommandIsAdvanceAndDirectionIsWest() {
         Mower mower = Mower.builder()
                 .position(new Position(2,2, Direction.West))
                 .commands(Collections.singletonList(Command.ADVANCE))
@@ -183,7 +184,7 @@ public class MowerTest {
     }
 
     @Test
-    public void shouldStayAtSamePositionWhenXisZeroAndCommandIsAdvanceAndDirectionWest() {
+    void shouldStayAtSamePositionWhenXisZeroAndCommandIsAdvanceAndDirectionWest() {
         Mower mower = Mower.builder()
                 .position(new Position(0,2, Direction.West))
                 .commands(Collections.singletonList(Command.ADVANCE))
@@ -197,7 +198,7 @@ public class MowerTest {
     }
 
     @Test
-    public void shouldStayAtSamePositionWhenYisZeroAndCommandIsAdvanceAndDirectionSouth() {
+    void shouldStayAtSamePositionWhenYisZeroAndCommandIsAdvanceAndDirectionSouth() {
         Mower mower = Mower.builder()
                 .position(new Position(3,0, Direction.South))
                 .commands(Collections.singletonList(Command.ADVANCE))
@@ -211,13 +212,13 @@ public class MowerTest {
     }
 
     @Test
-    public void shouldStayAtSamePlaceWhenMowerInGardenLimitX() {
+    void shouldStayAtSamePlaceWhenMowerInGardenLimitX() {
         Mower mower = Mower.builder()
                 .position(new Position(5,5, Direction.East))
                 .commands(Collections.singletonList(Command.ADVANCE))
                 .garden(garden).build();
         Position position = mower.processMowerCommands();
-        Position expectedPosition = new Position(3, 0, Direction.South);
+        Position expectedPosition = new Position(5, 5, Direction.East);
         assertThat(position).isNotNull();
         assertThat(position.getX()).isEqualTo(expectedPosition.getX());
         assertThat(position.getY()).isEqualTo(expectedPosition.getY());
@@ -225,7 +226,21 @@ public class MowerTest {
     }
 
     @Test
-    public void shouldMoveTo33EWhenMowerPositionIs12NAndCommandsGAGAGAGAA() {
+    void shouldStayAtSamePlaceWhenMowerInGardenLimitY() {
+        Mower mower = Mower.builder()
+                .position(new Position(5,5, Direction.North))
+                .commands(Collections.singletonList(Command.ADVANCE))
+                .garden(garden).build();
+        Position position = mower.processMowerCommands();
+        Position expectedPosition = new Position(5, 5, Direction.North);
+        assertThat(position).isNotNull();
+        assertThat(position.getX()).isEqualTo(expectedPosition.getX());
+        assertThat(position.getY()).isEqualTo(expectedPosition.getY());
+        assertThat(position.getDirection()).isEqualTo(expectedPosition.getDirection());
+    }
+
+    @Test
+    void shouldMoveTo33EWhenMowerPositionIs12NAndCommandsGAGAGAGAA() {
         List<Command> commands = Arrays.asList(Command.LEFT, Command.ADVANCE,
                 Command.LEFT, Command.ADVANCE, Command.LEFT, Command.ADVANCE,
                 Command.LEFT, Command.ADVANCE, Command.ADVANCE);
@@ -242,7 +257,7 @@ public class MowerTest {
     }
 
     @Test
-    public void shouldMoveTo51EWhenMowerPositionIs33EAndCommandsAADAADADDA() {
+    void shouldMoveTo51EWhenMowerPositionIs33EAndCommandsAADAADADDA() {
         List<Command> commands = Arrays.asList(Command.ADVANCE, Command.ADVANCE,
                 Command.RIGHT, Command.ADVANCE, Command.ADVANCE, Command.RIGHT,
                 Command.ADVANCE, Command.RIGHT, Command.RIGHT, Command.ADVANCE);

@@ -1,7 +1,12 @@
-package io.github.hboufaied.kata.entity;
+package io.github.hboufaied.kata.rule;
 
+import io.github.hboufaied.kata.entity.Garden;
 import io.github.hboufaied.kata.rule.Direction;
+import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter @Setter
 public class Position {
 
     private int x;
@@ -47,27 +52,11 @@ public class Position {
         }
     }
 
-    public int getX() {
-        return x;
-    }
-
-    public void setX(int x) {
-        this.x = x;
-    }
-
-    public int getY() {
-        return y;
-    }
-
-    public void setY(int y) {
-        this.y = y;
-    }
-
-    public Direction getDirection() {
-        return direction;
-    }
-
-    public void setDirection(Direction direction) {
-        this.direction = direction;
+    public String toString() {
+        return new StringBuilder()
+                .append(x).append(" ")
+                .append(y).append(" ")
+                .append(direction.getCode())
+                .toString() ;
     }
 }

@@ -5,7 +5,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.github.hboufaied.kata.entity.Garden;
 import io.github.hboufaied.kata.entity.Mower;
-import io.github.hboufaied.kata.entity.Position;
+import io.github.hboufaied.kata.rule.Position;
 import io.github.hboufaied.kata.rule.Command;
 import io.github.hboufaied.kata.rule.Direction;
 

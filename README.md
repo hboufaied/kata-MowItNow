@@ -15,7 +15,12 @@ Stack technique
 Usage
 =====
 
-Pour lancer l'ensemble des tests :
+Pour lancer la simulation à partir d'un fichier d'entré
+``` sh
+mvn exec:java -Dexec.args="PATH_FICHIER_INPUT"
+```
+
+Pour lancer les tests unitaires et fonctionnels :
 
 ``` sh
 mvn test

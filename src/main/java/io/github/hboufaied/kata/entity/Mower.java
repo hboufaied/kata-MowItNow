@@ -1,6 +1,7 @@
 package io.github.hboufaied.kata.entity;
 
 import io.github.hboufaied.kata.rule.Command;
+import io.github.hboufaied.kata.rule.Position;
 import lombok.Builder;
 import lombok.Data;
 
