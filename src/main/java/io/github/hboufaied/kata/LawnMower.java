@@ -35,8 +35,11 @@ public class LawnMower {
 
             while (iterator.hasNext()) {
                 String mowerPosition = iterator.next();
-                Position p = parseAndCreatePosition(mowerPosition);
+                if(!iterator.hasNext()) {
+                    throw new FileFormatInvalidException("Missing movement instruction");
+                }
                 String mowerCommands = iterator.next();
+                Position p = parseAndCreatePosition(mowerPosition);
                 List<Command> commands = parseAndCreateCommand(mowerCommands);
                 mowers.add(Mower.builder().position(p).commands(commands).garden(garden).build());
             }
@@ -58,6 +61,7 @@ public class LawnMower {
         int x = Integer.parseInt(mowerPosition.split(GARDEN_POSITION_SEPARATOR)[0]);
         int y = Integer.parseInt(mowerPosition.split(GARDEN_POSITION_SEPARATOR)[1]);
         String direction = mowerPosition.split(GARDEN_POSITION_SEPARATOR)[2];
+        // to check if position is in  the garden limit
         return new Position(x, y, Direction.findDirectionFromCode(direction));
     }
 

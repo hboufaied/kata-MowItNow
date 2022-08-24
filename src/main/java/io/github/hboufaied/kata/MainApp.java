@@ -15,6 +15,7 @@ public class MainApp {
         }
         LawnMower lawnMower = new LawnMower(Path.of(args[0]));
         List<Position> p = lawnMower.processMovement();
+        // Use log4J instead of sysout
         p.forEach(System.out::println);
     }
 }
